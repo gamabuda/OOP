@@ -22,16 +22,13 @@ class Human
         get => _fullname; 
         set{ _fullname = value; }
     }
-    public int Age
+    public virtual int Age
     {
         get
         {
             return _age;
         }
-        set
-        {
-            _age = value;
-        }
+        set { if (value > 0 && value < 110) _age = value; }
     }
 
     public virtual void Info()
@@ -42,6 +39,11 @@ class Human
 
 class Student : Human
 {
+    public override int Age
+    {
+        get => base.Age;
+        set { if (value > 16 && value < 110) base.Age = value; }
+    }
     public override void Info()
     {
         Console.WriteLine($"Student - {Fullname}");
