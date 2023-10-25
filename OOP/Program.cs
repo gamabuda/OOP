@@ -4,8 +4,8 @@ Human.Age = 21;
 Student Student = new Student();
 Student.Fullname = "Ron Watson";
 Student.Age = 32;
-//Human.Info();
-//Student.Info();
+Human.Info();
+Student.Info();
 Console.WriteLine(Human);
 Console.WriteLine(Student);
 
